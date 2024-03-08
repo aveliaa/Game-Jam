@@ -41,11 +41,12 @@
 [ext_resource path="res://assets/industrial objects/Bucket.png" type="Texture" id=39]
 [ext_resource path="res://assets/industrial objects/Mop.png" type="Texture" id=40]
 [ext_resource path="res://assets/industrial objects/Board2.png" type="Texture" id=41]
-[ext_resource path="res://assets/industrial objects/1.png" type="Texture" id=42]
-[ext_resource path="res://assets/industrial objects/4.png" type="Texture" id=43]
+[ext_resource path="res://objects/Truck.tscn" type="PackedScene" id=42]
+[ext_resource path="res://assets/power station/3 Objects/2 Decoration/19.png" type="Texture" id=43]
 [ext_resource path="res://assets/background/industry/4.png" type="Texture" id=44]
 [ext_resource path="res://assets/background/industry/2.png" type="Texture" id=45]
 [ext_resource path="res://assets/background/industry/5.png" type="Texture" id=46]
+[ext_resource path="res://assets/power station/3 Objects/2 Decoration/8.png" type="Texture" id=47]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -630,9 +631,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 9.75, 30.25 )
 
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 79, 57.5 )
-
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 32.5, 89.5 )
 
@@ -745,6 +743,11 @@ position = Vector2( -316, 1689 )
 scale = Vector2( 1.79687, 1.28125 )
 texture = ExtResource( 41 )
 
+[node name="Sprite5" type="Sprite" parent="decor/office"]
+position = Vector2( -431, 1720 )
+scale = Vector2( 1.79687, 1.28125 )
+texture = ExtResource( 47 )
+
 [node name="construction" type="Node2D" parent="decor"]
 
 [node name="Sprite" type="Sprite" parent="decor/construction"]
@@ -779,6 +782,11 @@ flip_v = true
 position = Vector2( 771.25, 920 )
 scale = Vector2( 1.23437, 1 )
 texture = ExtResource( 35 )
+
+[node name="Sprite2" type="Sprite" parent="decor/sign"]
+position = Vector2( 233, 283 )
+scale = Vector2( 1.09375, 1.27273 )
+texture = ExtResource( 43 )
 
 [node name="press" type="Node2D" parent="decor"]
 
@@ -851,32 +859,7 @@ texture = ExtResource( 38 )
 centered = false
 flip_h = true
 
-[node name="Truck" type="RigidBody2D" parent="."]
-mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Truck"]
-position = Vector2( 405, 298.5 )
-shape = SubResource( 27 )
-
-[node name="Sprite4" type="Sprite" parent="Truck"]
-position = Vector2( 458, 329 )
-texture = ExtResource( 43 )
-hframes = 4
-
-[node name="Sprite" type="Sprite" parent="Truck"]
-position = Vector2( 385, 308 )
-scale = Vector2( 1.52273, 1.53509 )
-texture = ExtResource( 42 )
-
-[node name="Sprite2" type="Sprite" parent="Truck"]
-position = Vector2( 348, 329 )
-texture = ExtResource( 43 )
-hframes = 4
-
-[node name="Sprite3" type="Sprite" parent="Truck"]
-position = Vector2( 414, 330 )
-texture = ExtResource( 43 )
-hframes = 4
+[node name="Truck" parent="." instance=ExtResource( 42 )]
 
 [node name="chimneyMapLimiter" type="RigidBody2D" parent="."]
 mode = 1
@@ -890,34 +873,58 @@ shape = SubResource( 28 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 1000, 600 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 581, 206.5 )
 scale = Vector2( 2.51042, 1.8858 )
 texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.6, 1 )
 motion_mirroring = Vector2( 1400, 600 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 556.5, 35 )
 scale = Vector2( 2.44965, 1.35802 )
 texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.9, 1 )
 motion_mirroring = Vector2( 1200, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 600, 168.5 )
 scale = Vector2( 2.27431, 1.25 )
 texture = ExtResource( 44 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 1200, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2( 611, 128 )
 scale = Vector2( 2.14236, 1.51235 )
 texture = ExtResource( 46 )
+__meta__ = {
+"_edit_lock_": true
+}
