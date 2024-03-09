@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://assets/nursery/woodFoor.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://assets/Idle.png" type="Texture" id=3]
+[ext_resource path="res://scenes/NurseryMovement.gd" type="Script" id=2]
+[ext_resource path="res://assets/kai/chibi-idle-1.png" type="Texture" id=3]
 [ext_resource path="res://assets/nursery/wallpaper.png" type="Texture" id=4]
-[ext_resource path="res://assets/nursery/bassinet.png" type="Texture" id=5]
+[ext_resource path="res://assets/nursery/bassinet-no-star.png" type="Texture" id=5]
 [ext_resource path="res://assets/nursery/milk.png" type="Texture" id=6]
 [ext_resource path="res://assets/nursery/table.png" type="Texture" id=7]
 [ext_resource path="res://assets/nursery/dresser.png" type="Texture" id=8]
@@ -13,6 +13,31 @@
 [ext_resource path="res://assets/nursery/diaper.png" type="Texture" id=11]
 [ext_resource path="res://assets/nursery/wallpaper2.png" type="Texture" id=12]
 [ext_resource path="res://assets/nursery/wallpaper3.png" type="Texture" id=13]
+[ext_resource path="res://assets/kai/chibi-idle-2.png" type="Texture" id=14]
+[ext_resource path="res://assets/kai/chibi-idle-3.png" type="Texture" id=15]
+[ext_resource path="res://assets/kai/chibi-idle-4.png" type="Texture" id=16]
+[ext_resource path="res://assets/kai/Chibi_Walk-1.png" type="Texture" id=17]
+[ext_resource path="res://assets/kai/Chibi_Walk-5.png" type="Texture" id=18]
+[ext_resource path="res://assets/kai/Chibi_Walk-6.png" type="Texture" id=19]
+[ext_resource path="res://assets/kai/Chibi_Walk-4.png" type="Texture" id=20]
+[ext_resource path="res://assets/kai/Chibi_Walk-3.png" type="Texture" id=21]
+[ext_resource path="res://assets/kai/Chibi_Walk-2.png" type="Texture" id=22]
+[ext_resource path="res://assets/summer/Nursery_Sad-3.png" type="Texture" id=23]
+[ext_resource path="res://assets/summer/Nursery_Happy-2.png" type="Texture" id=24]
+[ext_resource path="res://assets/summer/Nursery_Idle-2.png" type="Texture" id=25]
+[ext_resource path="res://assets/summer/Nursery_Happy-1.png" type="Texture" id=26]
+[ext_resource path="res://assets/summer/Nursery_Idle-1.png" type="Texture" id=27]
+[ext_resource path="res://assets/summer/Nursery_Sad-2.png" type="Texture" id=28]
+[ext_resource path="res://assets/summer/Nursery_Sad-1.png" type="Texture" id=29]
+[ext_resource path="res://assets/summer/Nursery_Idle-3.png" type="Texture" id=30]
+[ext_resource path="res://scenes/Nursery.gd" type="Script" id=31]
+[ext_resource path="res://assets/nursery/open-book.png" type="Texture" id=32]
+[ext_resource path="res://assets/font/Catboo.ttf" type="DynamicFontData" id=33]
+[ext_resource path="res://assets/nursery/bubble.png" type="Texture" id=34]
+[ext_resource path="res://assets/nursery/pointer-2.png" type="Texture" id=35]
+[ext_resource path="res://assets/nursery/pointer-1.png" type="Texture" id=36]
+[ext_resource path="res://assets/nursery/pointer-3.png" type="Texture" id=37]
+[ext_resource path="res://assets/sound/nursery/a-minor-dance-piano-104752.mp3" type="AudioStream" id=40]
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -82,86 +107,150 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 3/shapes = [  ]
 3/z_index = 0
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 128, 128 )
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 28 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "cry",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 25 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "happy",
+"speed": 5.0
+} ]
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 128, 0, 128, 128 )
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 84.5, 80 )
 
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 256, 0, 128, 128 )
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 45, 83 )
 
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 384, 0, 128, 128 )
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 93.704, 133 )
 
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 512, 0, 128, 128 )
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 72.25, 88 )
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 640, 0, 128, 128 )
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 59.5, 52 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 42.5, 77.25 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 50.5, 339 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 50
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 33 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 70
+font_data = ExtResource( 33 )
+
+[sub_resource type="DynamicFont" id=31]
+size = 24
+font_data = ExtResource( 33 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 35 ), ExtResource( 37 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 28.875, 67.5 )
-
-[sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 50.5, 339 )
-
 [node name="Nursery" type="Node2D"]
+script = ExtResource( 31 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 20 )
 format = 1
 tile_data = PoolIntArray( 65532, 3, 0, 65533, 1, 0, 65534, 3, 0, 65535, 2, 0, 0, 3, 0, 1, 1, 0, 2, 3, 0, 3, 2, 0, 4, 3, 0, 5, 1, 0, 6, 3, 0, 7, 2, 0, 8, 3, 0, 9, 1, 0, 10, 3, 0, 11, 2, 0, 12, 3, 0, 13, 1, 0, 14, 3, 0, 15, 2, 0, 16, 3, 0, 17, 1, 0, 18, 3, 0, 19, 2, 0, 20, 3, 0, 21, 1, 0, 22, 3, 0, 23, 2, 0, 131068, 3, 0, 131069, 1, 0, 131070, 3, 0, 131071, 2, 0, 65536, 3, 0, 65537, 1, 0, 65538, 3, 0, 65539, 2, 0, 65540, 3, 0, 65541, 1, 0, 65542, 3, 0, 65543, 2, 0, 65544, 3, 0, 65545, 1, 0, 65546, 3, 0, 65547, 2, 0, 65548, 3, 0, 65549, 1, 0, 65550, 3, 0, 65551, 2, 0, 65552, 3, 0, 65553, 1, 0, 65554, 3, 0, 65555, 2, 0, 65556, 3, 0, 65557, 1, 0, 65558, 3, 0, 65559, 2, 0, 196604, 3, 0, 196605, 1, 0, 196606, 3, 0, 196607, 2, 0, 131072, 3, 0, 131073, 1, 0, 131074, 3, 0, 131075, 2, 0, 131076, 3, 0, 131077, 1, 0, 131078, 3, 0, 131079, 2, 0, 131080, 3, 0, 131081, 1, 0, 131082, 3, 0, 131083, 2, 0, 131084, 3, 0, 131085, 1, 0, 131086, 3, 0, 131087, 2, 0, 131088, 3, 0, 131089, 1, 0, 131090, 3, 0, 131091, 2, 0, 131092, 3, 0, 131093, 1, 0, 131094, 3, 0, 131095, 2, 0, 262140, 3, 0, 262141, 1, 0, 262142, 3, 0, 262143, 2, 0, 196608, 3, 0, 196609, 1, 0, 196610, 3, 0, 196611, 2, 0, 196612, 3, 0, 196613, 1, 0, 196614, 3, 0, 196615, 2, 0, 196616, 3, 0, 196617, 1, 0, 196618, 3, 0, 196619, 2, 0, 196620, 3, 0, 196621, 1, 0, 196622, 3, 0, 196623, 2, 0, 196624, 3, 0, 196625, 1, 0, 196626, 3, 0, 196627, 2, 0, 196628, 3, 0, 196629, 1, 0, 196630, 3, 0, 196631, 2, 0, 327676, 3, 0, 327677, 1, 0, 327678, 3, 0, 327679, 2, 0, 262144, 3, 0, 262145, 1, 0, 262146, 3, 0, 262147, 2, 0, 262148, 3, 0, 262149, 1, 0, 262150, 3, 0, 262151, 2, 0, 262152, 3, 0, 262153, 1, 0, 262154, 3, 0, 262155, 2, 0, 262156, 3, 0, 262157, 1, 0, 262158, 3, 0, 262159, 2, 0, 262160, 3, 0, 262161, 1, 0, 262162, 3, 0, 262163, 2, 0, 262164, 3, 0, 262165, 1, 0, 262166, 3, 0, 262167, 2, 0, 393212, 3, 0, 393213, 1, 0, 393214, 3, 0, 393215, 2, 0, 327680, 3, 0, 327681, 1, 0, 327682, 3, 0, 327683, 2, 0, 327684, 3, 0, 327685, 1, 0, 327686, 3, 0, 327687, 2, 0, 327688, 3, 0, 327689, 1, 0, 327690, 3, 0, 327691, 2, 0, 327692, 3, 0, 327693, 1, 0, 327694, 3, 0, 327695, 2, 0, 327696, 3, 0, 327697, 1, 0, 327698, 3, 0, 327699, 2, 0, 327700, 3, 0, 327701, 1, 0, 327702, 3, 0, 327703, 2, 0, 458748, 3, 0, 458749, 1, 0, 458750, 3, 0, 458751, 2, 0, 393216, 3, 0, 393217, 1, 0, 393218, 3, 0, 393219, 2, 0, 393220, 3, 0, 393221, 1, 0, 393222, 3, 0, 393223, 2, 0, 393224, 3, 0, 393225, 1, 0, 393226, 3, 0, 393227, 2, 0, 393228, 3, 0, 393229, 1, 0, 393230, 3, 0, 393231, 2, 0, 393232, 3, 0, 393233, 1, 0, 393234, 3, 0, 393235, 2, 0, 393236, 3, 0, 393237, 1, 0, 393238, 3, 0, 393239, 2, 0, 524284, 3, 0, 524285, 1, 0, 524286, 3, 0, 524287, 2, 0, 458752, 3, 0, 458753, 1, 0, 458754, 3, 0, 458755, 2, 0, 458756, 3, 0, 458757, 1, 0, 458758, 3, 0, 458759, 2, 0, 458760, 3, 0, 458761, 1, 0, 458762, 3, 0, 458763, 2, 0, 458764, 3, 0, 458765, 1, 0, 458766, 3, 0, 458767, 2, 0, 458768, 3, 0, 458769, 1, 0, 458770, 3, 0, 458771, 2, 0, 458772, 3, 0, 458773, 1, 0, 458774, 3, 0, 458775, 2, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0 )
 
+[node name="summer" type="Node2D" parent="."]
+
+[node name="SummerAnim" type="AnimatedSprite" parent="summer"]
+position = Vector2( 596, 414 )
+scale = Vector2( 0.657895, 0.649733 )
+frames = SubResource( 22 )
+animation = "happy"
+
+[node name="want" type="Node2D" parent="summer"]
+
+[node name="bubble" type="Sprite" parent="summer/want"]
+position = Vector2( 512, 335 )
+scale = Vector2( 0.383962, 0.366981 )
+texture = ExtResource( 34 )
+
+[node name="objective" type="Sprite" parent="summer/want"]
+position = Vector2( 506, 333 )
+scale = Vector2( 0.710167, 0.519807 )
+texture = ExtResource( 32 )
+
+[node name="sound" type="AudioStreamPlayer2D" parent="summer"]
+position = Vector2( 594, 380 )
+
 [node name="Bassinet" type="Node2D" parent="."]
 position = Vector2( 0, -68 )
 
 [node name="Sprite" type="Sprite" parent="Bassinet"]
-position = Vector2( 587, 525 )
-scale = Vector2( 0.760638, 0.632948 )
+position = Vector2( 590, 527 )
+scale = Vector2( 0.760638, 0.794086 )
 texture = ExtResource( 5 )
+
+[node name="bassinetArea" type="Area2D" parent="Bassinet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bassinet/bassinetArea"]
+position = Vector2( 586.5, 505 )
+shape = SubResource( 27 )
 
 [node name="Table" type="Node2D" parent="."]
 position = Vector2( 0, -68 )
 
 [node name="Sprite" type="Sprite" parent="Table"]
-position = Vector2( 779.875, 541.375 )
-scale = Vector2( 0.442307, 0.452185 )
+position = Vector2( 847, 540 )
+scale = Vector2( 0.442307, 0.477459 )
 texture = ExtResource( 7 )
 
-[node name="Bottle" type="Node2D" parent="."]
-position = Vector2( 0, -68 )
+[node name="Bottle" type="Node2D" parent="Table"]
 
-[node name="Sprite" type="Sprite" parent="Bottle"]
-position = Vector2( 785, 503 )
+[node name="Sprite" type="Sprite" parent="Table/Bottle"]
+position = Vector2( 851, 501 )
 scale = Vector2( 0.589911, 0.619047 )
 texture = ExtResource( 6 )
+
+[node name="milkArea" type="Area2D" parent="Table"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/milkArea"]
+position = Vector2( 852, 502 )
+shape = SubResource( 23 )
 
 [node name="Door" type="Node2D" parent="."]
 position = Vector2( 0, -68 )
 
 [node name="Sprite" type="Sprite" parent="Door"]
-position = Vector2( 1184.5, 497.5 )
+position = Vector2( 1226, 499 )
 scale = Vector2( 0.820652, 0.82 )
 texture = ExtResource( 10 )
 
@@ -169,38 +258,66 @@ texture = ExtResource( 10 )
 position = Vector2( 0, -68 )
 
 [node name="Sprite" type="Sprite" parent="Dresser"]
-position = Vector2( 115, 476 )
+position = Vector2( 134, 476 )
 scale = Vector2( 0.78972, 0.785714 )
 texture = ExtResource( 8 )
+
+[node name="dressArea" type="Area2D" parent="Dresser"]
+position = Vector2( 152, 476 )
+scale = Vector2( 0.78972, 0.785714 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dresser/dressArea"]
+position = Vector2( -43.0532, -3.81821 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 24 )
 
 [node name="Bookshelf" type="Node2D" parent="."]
 position = Vector2( 0, -68 )
 
 [node name="Sprite" type="Sprite" parent="Bookshelf"]
-position = Vector2( 989, 503.375 )
+position = Vector2( 1074, 503 )
 scale = Vector2( 0.764151, 0.769164 )
 texture = ExtResource( 9 )
+
+[node name="bookArea" type="Area2D" parent="Bookshelf"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bookshelf/bookArea"]
+position = Vector2( 1075.25, 492 )
+shape = SubResource( 25 )
 
 [node name="ChangingTable" type="Node2D" parent="."]
 position = Vector2( 0, -68 )
 
 [node name="Sprite" type="Sprite" parent="ChangingTable"]
-position = Vector2( 235, 536 )
+position = Vector2( 360, 536 )
 scale = Vector2( 0.725275, 0.652778 )
 texture = ExtResource( 11 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 410, 201 )
+[node name="diaperArea" type="Area2D" parent="ChangingTable"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangingTable/diaperArea"]
+position = Vector2( 357, 528 )
+shape = SubResource( 26 )
+
+[node name="kai" type="KinematicBody2D" parent="."]
+position = Vector2( 710, 201 )
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( -21, 169 )
-scale = Vector2( 2.58398, 2.13672 )
-frames = SubResource( 17 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -22, 238.5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kai"]
+position = Vector2( 30, 237 )
 shape = SubResource( 18 )
+
+[node name="KaiAnim" type="AnimatedSprite" parent="kai"]
+position = Vector2( 31, 244 )
+scale = Vector2( 0.92456, 0.814005 )
+frames = SubResource( 17 )
+animation = "walk"
+
+[node name="hold" type="Sprite" parent="kai"]
+visible = false
+position = Vector2( 26, 120 )
+scale = Vector2( 0.743976, 0.707662 )
+texture = ExtResource( 32 )
 
 [node name="MapLimit" type="RigidBody2D" parent="."]
 mode = 1
@@ -212,3 +329,85 @@ shape = SubResource( 21 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapLimit"]
 position = Vector2( 1332, 324 )
 shape = SubResource( 21 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="title" type="Label" parent="Labels"]
+margin_left = 504.0
+margin_top = 119.0
+margin_right = 700.0
+margin_bottom = 190.0
+custom_colors/font_color = Color( 0.760784, 0.25098, 0.25098, 1 )
+custom_constants/shadow_offset_x = -1
+custom_fonts/font = SubResource( 28 )
+text = "Time :"
+align = 1
+valign = 1
+
+[node name="time" type="Label" parent="Labels"]
+margin_left = 532.0
+margin_top = 190.0
+margin_right = 662.0
+margin_bottom = 260.0
+custom_fonts/font = SubResource( 29 )
+text = "0"
+align = 1
+
+[node name="title2" type="Label" parent="Labels"]
+margin_left = 534.0
+margin_top = 89.0
+margin_right = 628.0
+margin_bottom = 114.0
+custom_colors/font_color = Color( 0.760784, 0.25098, 0.25098, 1 )
+custom_fonts/font = SubResource( 31 )
+text = "Energy :"
+
+[node name="energy" type="Label" parent="Labels"]
+margin_left = 640.0
+margin_top = 91.0
+margin_right = 654.0
+margin_bottom = 116.0
+custom_colors/font_color = Color( 0.760784, 0.25098, 0.25098, 1 )
+custom_fonts/font = SubResource( 31 )
+text = "5"
+
+[node name="Pointer" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Pointer"]
+position = Vector2( 118, 268 )
+scale = Vector2( 0.546729, 0.597826 )
+frames = SubResource( 30 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Pointer"]
+position = Vector2( 357, 350 )
+scale = Vector2( 0.546729, 0.597826 )
+frames = SubResource( 30 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Pointer"]
+position = Vector2( 854, 362 )
+scale = Vector2( 0.546729, 0.597826 )
+frames = SubResource( 30 )
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Pointer"]
+position = Vector2( 1076, 313 )
+scale = Vector2( 0.546729, 0.597826 )
+frames = SubResource( 30 )
+playing = true
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 40 )
+autoplay = true
+
+[connection signal="body_entered" from="Bassinet/bassinetArea" to="." method="_on_bassinetArea_body_entered"]
+[connection signal="body_entered" from="Table/milkArea" to="." method="_on_milkArea_body_entered"]
+[connection signal="body_entered" from="Dresser/dressArea" to="." method="_on_dressArea_body_entered"]
+[connection signal="body_entered" from="Bookshelf/bookArea" to="." method="_on_bookArea_body_entered"]
+[connection signal="body_entered" from="ChangingTable/diaperArea" to="." method="_on_diaperArea_body_entered"]

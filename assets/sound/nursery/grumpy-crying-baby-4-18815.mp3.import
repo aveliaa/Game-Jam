@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/grumpy-crying-baby-4-18815.mp3-c3e6b6c867209fffac1c1ddaead2f17b.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/nursery/grumpy-crying-baby-4-18815.mp3"
+dest_files=[ "res://.import/grumpy-crying-baby-4-18815.mp3-c3e6b6c867209fffac1c1ddaead2f17b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

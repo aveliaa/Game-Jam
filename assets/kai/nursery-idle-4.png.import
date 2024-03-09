@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Idle.png-00021c4c30baefda8e1fa8ce07b8027a.stex"
+path="res://.import/nursery-idle-4.png-8bbcda845f8728c003531bc97c176afc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Idle.png"
-dest_files=[ "res://.import/Idle.png-00021c4c30baefda8e1fa8ce07b8027a.stex" ]
+source_file="res://assets/kai/nursery-idle-4.png"
+dest_files=[ "res://.import/nursery-idle-4.png-8bbcda845f8728c003531bc97c176afc.stex" ]
 
 [params]
 

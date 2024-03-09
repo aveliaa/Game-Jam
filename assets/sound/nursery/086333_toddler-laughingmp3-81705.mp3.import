@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/086333_toddler-laughingmp3-81705.mp3-7e803947a48d3ee54d212ecaf542fdfc.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/nursery/086333_toddler-laughingmp3-81705.mp3"
+dest_files=[ "res://.import/086333_toddler-laughingmp3-81705.mp3-7e803947a48d3ee54d212ecaf542fdfc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

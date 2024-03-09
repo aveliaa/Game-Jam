@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/warehouse/IndustrialTile_73.png" type="Texture" id=2]
@@ -6,14 +6,13 @@
 [ext_resource path="res://assets/industrial objects/Ladder3.png" type="Texture" id=4]
 [ext_resource path="res://assets/industrial objects/Ladder1.png" type="Texture" id=5]
 [ext_resource path="res://assets/background/city1/1.png" type="Texture" id=6]
-[ext_resource path="res://assets/bunny.png" type="Texture" id=7]
+[ext_resource path="res://assets/kai/Idle.png" type="Texture" id=7]
 [ext_resource path="res://assets/background/city1/2.png" type="Texture" id=8]
 [ext_resource path="res://assets/background/city1/3.png" type="Texture" id=9]
 [ext_resource path="res://assets/background/city1/4.png" type="Texture" id=10]
 [ext_resource path="res://assets/background/city1/5.png" type="Texture" id=11]
 [ext_resource path="res://objects/bench.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/broken-barrel.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/Idle.png" type="Texture" id=14]
 [ext_resource path="res://assets/industrial objects/9Craftpix.png" type="Texture" id=15]
 [ext_resource path="res://assets/industrial objects/7Dangerarea.png" type="Texture" id=16]
 [ext_resource path="res://assets/industrial objects/8Loot.png" type="Texture" id=17]
@@ -21,39 +20,24 @@
 [ext_resource path="res://assets/industrial objects/27.png" type="Texture" id=19]
 [ext_resource path="res://assets/industrial objects/Pointer1.png" type="Texture" id=20]
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 14 )
-region = Rect2( 0, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 7 )
 region = Rect2( 128, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 7 )
 region = Rect2( 256, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 14 )
+atlas = ExtResource( 7 )
 region = Rect2( 384, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 14 )
-region = Rect2( 512, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 14 )
-region = Rect2( 640, 0, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -107,7 +91,6 @@ frames = SubResource( 17 )
 visible = false
 position = Vector2( 26.5, 119.75 )
 scale = Vector2( 0.236111, 0.191532 )
-texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 4, 179 )
