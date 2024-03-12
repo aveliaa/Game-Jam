@@ -73,13 +73,15 @@ func shooting(is_shooting):
 	shoot_left.disabled = disable_left
 
 onready var hp = $status/Hp
+var remaining_hp = 100
 func punch_damage(to_right,damage):
 	if to_right:
 		velocity.x += 3000
 	else:
 		velocity.x -= 3000
-		
-	hp.text = str(int(hp.text) - damage)
+	
+	remaining_hp = remaining_hp - damage
+	hp.text = str(remaining_hp)
 	
 	move_and_slide(velocity, UP)
 	
