@@ -13,11 +13,22 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 onready var player = $Player/Player
+onready var target = $MainTarget/EnermyBeginner
+
 onready var died = $Player/Player/popupLost
+onready var win = $Player/Player/popupWin
 
 func _process(delta):
+	
 	if player.remaining_hp < 0:
 		died.show()
+		
+	elif !target.is_alive:
+		yield(get_tree().create_timer(2),"timeout")
+		win.show()
 
 func _on_restart_pressed():
 	get_tree().change_scene("res://scenes/Level 1.tscn")
+
+func _on_nextLevel_pressed():
+	get_tree().change_scene("res://scenes/Level2Transition.tscn")
