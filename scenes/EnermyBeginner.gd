@@ -87,22 +87,23 @@ func locking_player(body):
 func _on_attack_range_right_body_entered(body):
 	if(body.name == "Player"):
 		print("attack right")
-		attack()
+		attack(body)
 
 
 func _on_attack_range_left_body_entered(body):
 	#character.play("attack")
 	if(body.name == "Player"):
 		print("attack left")
-		attack()
+		attack(body)
 
-onready var player_hp = $"../../Player/status/Hp"
 var is_attacking = false
 
-func attack():
+func attack(body):
 	is_attacking = true
 	character.play("attack") 
-	player_hp.text = str(int(player_hp.text) - 10)
+	
+	if body.has_method("punch_damage"):
+		body.punch_damage(go_right)
 
 
 func _on_attack_range_right_body_exited(body):

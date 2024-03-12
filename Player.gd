@@ -28,3 +28,17 @@ func _physics_process(delta):
 	velocity.y += delta * GRAVITY
 	get_input()
 	velocity = move_and_slide(velocity, UP)
+
+onready var hp = $status/Hp
+func punch_damage(to_right):
+	if to_right:
+		velocity.x += 3000
+	else:
+		velocity.x -= 3000
+		
+	hp.text = str(int(hp.text) - 5)
+	
+	move_and_slide(velocity, UP)
+	
+	# TODO: cant move when cornered
+
