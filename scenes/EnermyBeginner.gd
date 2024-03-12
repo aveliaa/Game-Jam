@@ -79,6 +79,11 @@ func _on_vision_range_left_body_entered(body):
 		locking_player(body)
 		
 func locking_player(body):
+	#First time?
+	if !player:
+		$sign/notice.show()
+		$notice.play()
+		
 	player = body
 	
 
@@ -103,15 +108,19 @@ var is_attacking = false
 func attack(body,damage):
 	is_attacking = true
 	character.play("attack") 
+	$punch.play()
 	
 	if body.has_method("punch_damage"):
 		body.punch_damage(go_right,damage)
+
 
 
 var is_alive = true
 
 func player_damage():
 	is_alive = false
+	$sign/notice.hide()
+	$sign/Sprite.hide()
 	character.play("pass")
 	
 	

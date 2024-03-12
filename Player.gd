@@ -62,6 +62,8 @@ func shooting(is_shooting):
 	var disable_left = true
 	
 	if is_shooting:
+		$shoot.play()
+		
 		if is_right:
 			disable_right = false
 		else:

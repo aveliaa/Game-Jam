@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/error-warning-login-denied-132113.mp3-9a5dca1c4ab8f5ef6fd7334f091e4017.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/mobs/error-warning-login-denied-132113.mp3"
+dest_files=[ "res://.import/error-warning-login-denied-132113.mp3-9a5dca1c4ab8f5ef6fd7334f091e4017.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
