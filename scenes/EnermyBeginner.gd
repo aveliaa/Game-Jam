@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 0.5
 export (int) var GRAVITY = 1200
 export (int) var jump_speed = -400
+export (int) var power
 
 onready var character = $character
 
@@ -91,12 +92,12 @@ func locking_player(body):
 
 func _on_attack_range_right_body_entered(body):
 	if(body.name == "Player") and is_alive:
-		attack(body,5)
+		attack(body,power)
 
 
 func _on_attack_range_left_body_entered(body):
 	if(body.name == "Player") and is_alive:
-		attack(body,5)
+		attack(body,power)
 
 func _on_danger_area_body_entered(body):
 	if(body.name == "Player") and is_alive:
