@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/warehouse/IndustrialTile_73.png" type="Texture" id=2]
@@ -25,6 +25,9 @@
 [ext_resource path="res://assets/level_1_mobs/enermy_1_1/Attack_2.png" type="Texture" id=23]
 [ext_resource path="res://assets/level_1_mobs/enermy_1_1/Run.png" type="Texture" id=24]
 [ext_resource path="res://assets/font/joystix monospace.otf" type="DynamicFontData" id=25]
+[ext_resource path="res://assets/kai/Shot_2.png" type="Texture" id=26]
+[ext_resource path="res://assets/kai/Run.png" type="Texture" id=27]
+[ext_resource path="res://assets/level_1_mobs/enermy_1_1/Dead.png" type="Texture" id=28]
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
@@ -41,11 +44,81 @@ flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 384, 0, 128, 128 )
 
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 768, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 896, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 384, 0, 128, 128 )
+
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ) ],
+"loop": true,
+"name": "shoot",
 "speed": 5.0
 } ]
 
@@ -60,6 +133,9 @@ font_data = ExtResource( 25 )
 size = 9
 outline_color = Color( 0.52549, 1, 0.556863, 1 )
 font_data = ExtResource( 25 )
+
+[sub_resource type="RectangleShape2D" id=77]
+extents = Vector2( 41.4453, 11.625 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -163,6 +239,26 @@ flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 1280, 0, 128, 128 )
 
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 28 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 28 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 28 )
+region = Rect2( 384, 0, 128, 128 )
+
 [sub_resource type="AtlasTexture" id=50]
 flags = 4
 atlas = ExtResource( 24 )
@@ -255,8 +351,8 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": true,
+"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ) ],
+"loop": false,
 "name": "pass",
 "speed": 5.0
 }, {
@@ -275,10 +371,13 @@ animations = [ {
 extents = Vector2( 99.5, 30 )
 
 [sub_resource type="RectangleShape2D" id=58]
-extents = Vector2( 15.5, 28.5 )
+extents = Vector2( 27.5, 28.5 )
 
 [sub_resource type="RectangleShape2D" id=59]
-extents = Vector2( 15.5, 30 )
+extents = Vector2( 29, 31.5 )
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 20.5, 28.75 )
 
 [node name="Level 1" type="Node2D"]
 position = Vector2( -84, 6 )
@@ -294,13 +393,9 @@ script = ExtResource( 1 )
 position = Vector2( 12.125, 139.5 )
 scale = Vector2( 1.24805, 1.17969 )
 frames = SubResource( 17 )
+animation = "shoot"
 
-[node name="Sprite" type="Sprite" parent="Player"]
-visible = false
-position = Vector2( 26.5, 119.75 )
-scale = Vector2( 0.236111, 0.191532 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="body" type="CollisionShape2D" parent="Player"]
 position = Vector2( 9.25, 178 )
 shape = SubResource( 3 )
 
@@ -323,6 +418,26 @@ margin_bottom = 6.0
 custom_colors/font_color = Color( 0.545098, 1, 0.529412, 1 )
 custom_fonts/font = SubResource( 61 )
 text = "100"
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 13, 181 )
+current = true
+
+[node name="shoot_right" type="Area2D" parent="Player"]
+position = Vector2( 248, -2 )
+
+[node name="right" type="CollisionShape2D" parent="Player/shoot_right"]
+position = Vector2( -173, 160 )
+shape = SubResource( 77 )
+disabled = true
+
+[node name="shoot_left" type="Area2D" parent="Player"]
+position = Vector2( -247, 1 )
+
+[node name="left" type="CollisionShape2D" parent="Player/shoot_left"]
+position = Vector2( 187, 157 )
+shape = SubResource( 77 )
+disabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 64, 15 )
@@ -641,38 +756,39 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Camera2D" type="Camera2D" parent="Enermy1/EnermyBeginner"]
-position = Vector2( 6, -90 )
-current = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="vision_range_right" type="Area2D" parent="Enermy1/EnermyBeginner"]
 position = Vector2( 1, 11 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/vision_range_right"]
+[node name="vision_right" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/vision_range_right"]
 position = Vector2( 106, 7 )
 shape = SubResource( 44 )
 
 [node name="vision_range_left" type="Area2D" parent="Enermy1/EnermyBeginner"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/vision_range_left"]
+[node name="vision_left" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/vision_range_left"]
 position = Vector2( -106, 16 )
 shape = SubResource( 44 )
 
 [node name="attack_range_right" type="Area2D" parent="Enermy1/EnermyBeginner"]
 
 [node name="right" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/attack_range_right"]
-position = Vector2( 27.5, 19.5 )
+position = Vector2( 51, 19 )
 shape = SubResource( 58 )
 
 [node name="attack_range_left" type="Area2D" parent="Enermy1/EnermyBeginner"]
 
 [node name="left" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/attack_range_left"]
-position = Vector2( -25.5, 22 )
+position = Vector2( -47, 20 )
 shape = SubResource( 59 )
 
+[node name="danger_area" type="Area2D" parent="Enermy1/EnermyBeginner"]
+
+[node name="danger" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/danger_area"]
+position = Vector2( 2.5, 20.75 )
+shape = SubResource( 82 )
+
+[connection signal="body_entered" from="Player/shoot_right" to="Player" method="_on_shoot_right_body_entered"]
+[connection signal="body_entered" from="Player/shoot_left" to="Player" method="_on_shoot_left_body_entered"]
 [connection signal="body_entered" from="Enermy1/patrol_left" to="Enermy1/EnermyBeginner" method="_on_patrol_left_body_entered"]
 [connection signal="body_entered" from="Enermy1/patrol_right" to="Enermy1/EnermyBeginner" method="_on_patrol_right_body_entered"]
 [connection signal="body_entered" from="Enermy1/EnermyBeginner/vision_range_right" to="Enermy1/EnermyBeginner" method="_on_vision_range_right_body_entered"]
@@ -681,3 +797,4 @@ shape = SubResource( 59 )
 [connection signal="body_exited" from="Enermy1/EnermyBeginner/attack_range_right" to="Enermy1/EnermyBeginner" method="_on_attack_range_right_body_exited"]
 [connection signal="body_entered" from="Enermy1/EnermyBeginner/attack_range_left" to="Enermy1/EnermyBeginner" method="_on_attack_range_left_body_entered"]
 [connection signal="body_exited" from="Enermy1/EnermyBeginner/attack_range_left" to="Enermy1/EnermyBeginner" method="_on_attack_range_left_body_exited"]
+[connection signal="body_entered" from="Enermy1/EnermyBeginner/danger_area" to="Enermy1/EnermyBeginner" method="_on_danger_area_body_entered"]

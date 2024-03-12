@@ -16,12 +16,13 @@ func _ready():
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY
 	
-	if player:
-		#print("player detected")
-		chase()
-	else:
-		move()
-	velocity = move_and_slide(velocity, UP)
+	if is_alive:
+		if player:
+			chase()
+		else:
+			move()
+		velocity = move_and_slide(velocity, UP)
+	
 
 # Mode
 func chase():	
@@ -85,27 +86,30 @@ func locking_player(body):
 # Attacking Player
 
 func _on_attack_range_right_body_entered(body):
-	if(body.name == "Player"):
-		print("attack right")
-		attack(body)
+	if(body.name == "Player") and is_alive:
+		attack(body,5)
 
 
 func _on_attack_range_left_body_entered(body):
 	#character.play("attack")
-	if(body.name == "Player"):
-		print("attack left")
-		attack(body)
+	if(body.name == "Player") and is_alive:
+		attack(body,5)
 
 var is_attacking = false
 
-func attack(body):
+func attack(body,damage):
 	is_attacking = true
 	character.play("attack") 
 	
 	if body.has_method("punch_damage"):
-		body.punch_damage(go_right)
+		body.punch_damage(go_right,damage)
 
-
+var is_alive = true
+func player_damage():
+	is_alive = false
+	character.play("pass")
+	
+	
 func _on_attack_range_right_body_exited(body):
 	if body.name == "Player":
 		is_attacking = false
@@ -114,3 +118,10 @@ func _on_attack_range_right_body_exited(body):
 func _on_attack_range_left_body_exited(body):
 	if body.name == "Player":
 		is_attacking = false
+
+
+
+
+func _on_danger_area_body_entered(body):
+	if(body.name == "Player") and is_alive:
+		attack(body,100)
