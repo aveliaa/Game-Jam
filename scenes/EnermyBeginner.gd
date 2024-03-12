@@ -23,13 +23,15 @@ func _physics_process(delta):
 		move()
 	velocity = move_and_slide(velocity, UP)
 
-
-func chase():
+# Mode
+func chase():	
 	if go_right:
+		run(false)
 		velocity.x += speed + 2
 	else:
+		run(true)
 		velocity.x -= speed	+ 2
-		
+	
 var go_right = true
 func move():	
 	if go_right:
@@ -37,6 +39,10 @@ func move():
 	else:
 		velocity.x -= speed	
 		
+func run(direction):
+	character.flip_h = direction
+	character.play("run")
+	
 func walk(direction):
 	character.flip_h = direction
 	character.play("walk")
@@ -56,14 +62,9 @@ func in_limit(direction_right):
 		yield(get_tree().create_timer(2),"timeout")
 		walk(!direction_right)
 		go_right = direction_right
-
-# vision_left = false
-#ar vision_right = false
-#func mob_range():
-#	vision_right = go_right
-#	vision_left = !go_right
 	
 # Seen Player
+
 var player = null
 
 func _on_vision_range_right_body_entered(body):
@@ -78,8 +79,6 @@ func _on_vision_range_left_body_entered(body):
 		
 func locking_player(body):
 	player = body
-#	$"../patrol_left/area".disabled = true
-#	$"../patrol_right/area".disabled = true
 	
 	
 
