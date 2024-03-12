@@ -17,7 +17,7 @@ func _physics_process(delta):
 	velocity.y += delta * GRAVITY
 	
 	if player:
-		print("player detected")
+		#print("player detected")
 		chase()
 	else:
 		move()
@@ -41,7 +41,8 @@ func move():
 		
 func run(direction):
 	character.flip_h = direction
-	character.play("run")
+	if !is_attacking:
+		character.play("run")
 	
 func walk(direction):
 	character.flip_h = direction
@@ -80,5 +81,35 @@ func _on_vision_range_left_body_entered(body):
 func locking_player(body):
 	player = body
 	
-	
 
+# Attacking Player
+
+func _on_attack_range_right_body_entered(body):
+	if(body.name == "Player"):
+		print("attack right")
+		attack()
+
+
+func _on_attack_range_left_body_entered(body):
+	#character.play("attack")
+	if(body.name == "Player"):
+		print("attack left")
+		attack()
+
+onready var player_hp = $"../../Player/status/Hp"
+var is_attacking = false
+
+func attack():
+	is_attacking = true
+	character.play("attack") 
+	player_hp.text = str(int(player_hp.text) - 10)
+
+
+func _on_attack_range_right_body_exited(body):
+	if body.name == "Player":
+		is_attacking = false
+
+
+func _on_attack_range_left_body_exited(body):
+	if body.name == "Player":
+		is_attacking = false
