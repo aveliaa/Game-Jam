@@ -368,16 +368,16 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 99.5, 30 )
+extents = Vector2( 103.25, 30 )
 
 [sub_resource type="RectangleShape2D" id=58]
-extents = Vector2( 27.5, 28.5 )
+extents = Vector2( 25.75, 28.5 )
 
 [sub_resource type="RectangleShape2D" id=59]
-extents = Vector2( 29, 31.5 )
+extents = Vector2( 25, 31.5 )
 
 [sub_resource type="RectangleShape2D" id=82]
-extents = Vector2( 20.5, 28.75 )
+extents = Vector2( 25.5, 28.75 )
 
 [node name="Level 1" type="Node2D"]
 position = Vector2( -84, 6 )
@@ -766,25 +766,28 @@ shape = SubResource( 44 )
 [node name="vision_range_left" type="Area2D" parent="Enermy1/EnermyBeginner"]
 
 [node name="vision_left" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/vision_range_left"]
-position = Vector2( -106, 16 )
+position = Vector2( -102.25, 16 )
 shape = SubResource( 44 )
 
 [node name="attack_range_right" type="Area2D" parent="Enermy1/EnermyBeginner"]
+visible = false
 
 [node name="right" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/attack_range_right"]
-position = Vector2( 51, 19 )
+position = Vector2( 52.75, 19 )
 shape = SubResource( 58 )
 
 [node name="attack_range_left" type="Area2D" parent="Enermy1/EnermyBeginner"]
+visible = false
 
 [node name="left" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/attack_range_left"]
-position = Vector2( -47, 20 )
+position = Vector2( -51, 20 )
 shape = SubResource( 59 )
 
 [node name="danger_area" type="Area2D" parent="Enermy1/EnermyBeginner"]
+visible = false
 
 [node name="danger" type="CollisionShape2D" parent="Enermy1/EnermyBeginner/danger_area"]
-position = Vector2( 2.5, 20.75 )
+position = Vector2( 0.5, 20.75 )
 shape = SubResource( 82 )
 
 [connection signal="body_entered" from="Player/shoot_right" to="Player" method="_on_shoot_right_body_entered"]
