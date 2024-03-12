@@ -12,7 +12,8 @@ const UP = Vector2(0,-1)
 var velocity = Vector2()
 
 func _ready():
-	walk(false)
+	if is_alive:
+		walk(false)
 	
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY
@@ -42,12 +43,13 @@ func move():
 		
 func run(direction):
 	character.flip_h = direction
-	if !is_attacking:
+	if !is_attacking and is_alive:
 		character.play("run")
 	
 func walk(direction):
-	character.flip_h = direction
-	character.play("walk")
+	if is_alive:
+		character.flip_h = direction
+		character.play("walk")
 
 # Left Limit
 func _on_patrol_left_body_entered(body):
