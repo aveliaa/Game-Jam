@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://assets/nursery/woodFoor.png" type="Texture" id=1]
 [ext_resource path="res://scenes/NurseryMovement.gd" type="Script" id=2]
@@ -37,7 +37,10 @@
 [ext_resource path="res://assets/nursery/pointer-2.png" type="Texture" id=35]
 [ext_resource path="res://assets/nursery/pointer-1.png" type="Texture" id=36]
 [ext_resource path="res://assets/nursery/pointer-3.png" type="Texture" id=37]
+[ext_resource path="res://assets/sound/nursery/coin_c_02-102844.mp3" type="AudioStream" id=38]
+[ext_resource path="res://assets/sound/nursery/3-down-3-89193.mp3" type="AudioStream" id=39]
 [ext_resource path="res://assets/sound/nursery/a-minor-dance-piano-104752.mp3" type="AudioStream" id=40]
+[ext_resource path="res://assets/sound/nursery/3-up-3-89188.mp3" type="AudioStream" id=41]
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -211,6 +214,12 @@ texture = ExtResource( 32 )
 [node name="sound" type="AudioStreamPlayer2D" parent="summer"]
 position = Vector2( 594, 380 )
 
+[node name="false-effect" type="AudioStreamPlayer2D" parent="summer"]
+stream = ExtResource( 39 )
+
+[node name="true-effect" type="AudioStreamPlayer2D" parent="summer"]
+stream = ExtResource( 41 )
+
 [node name="Bassinet" type="Node2D" parent="."]
 position = Vector2( 0, -68 )
 
@@ -268,7 +277,6 @@ scale = Vector2( 0.78972, 0.785714 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dresser/dressArea"]
 position = Vector2( -43.0532, -3.81821 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 24 )
 
 [node name="Bookshelf" type="Node2D" parent="."]
@@ -318,6 +326,9 @@ visible = false
 position = Vector2( 26, 120 )
 scale = Vector2( 0.743976, 0.707662 )
 texture = ExtResource( 32 )
+
+[node name="pickUp" type="AudioStreamPlayer2D" parent="kai"]
+stream = ExtResource( 38 )
 
 [node name="MapLimit" type="RigidBody2D" parent="."]
 mode = 1
@@ -387,23 +398,25 @@ playing = true
 position = Vector2( 357, 350 )
 scale = Vector2( 0.546729, 0.597826 )
 frames = SubResource( 30 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Pointer"]
 position = Vector2( 854, 362 )
 scale = Vector2( 0.546729, 0.597826 )
 frames = SubResource( 30 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Pointer"]
 position = Vector2( 1076, 313 )
 scale = Vector2( 0.546729, 0.597826 )
 frames = SubResource( 30 )
+frame = 2
 playing = true
 
 [node name="bgm" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 40 )
+volume_db = -7.429
 autoplay = true
 
 [connection signal="body_entered" from="Bassinet/bassinetArea" to="." method="_on_bassinetArea_body_entered"]

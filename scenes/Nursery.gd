@@ -50,6 +50,7 @@ func get_input():
 			handle_request()
 		else:
 			current_task = current_area
+			$kai/pickUp.play()
 			current_obj = get_object(current_task)
 			
 			if(current_obj != null):
@@ -94,12 +95,16 @@ onready var timer = $Timer
 func handle_request():
 	holding.hide()
 	
+	
 	if current_task != current_request:
 		summer_cry()
+		$"summer/false-effect".play()
 		
 	else:
 		current_request = null
 		summer_happy()
+		$"summer/true-effect".play()
+		
 		yield(get_tree().create_timer(3),"timeout")
 		
 		current_request = generate_request()
