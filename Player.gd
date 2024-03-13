@@ -84,7 +84,10 @@ func punch_damage(to_right,damage):
 	hp.text = str(remaining_hp)
 	
 	move_and_slide(velocity, UP)
-	
+
+func shoot_damage(damage):
+	remaining_hp = remaining_hp - damage
+	hp.text = str(remaining_hp)
 
 # One Hit
 func _on_shoot_right_body_entered(body):

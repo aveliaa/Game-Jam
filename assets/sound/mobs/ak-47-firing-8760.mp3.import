@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ak-47-firing-8760.mp3-fcec25a2020374cb11c09a01399e19f7.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/mobs/ak-47-firing-8760.mp3"
+dest_files=[ "res://.import/ak-47-firing-8760.mp3-fcec25a2020374cb11c09a01399e19f7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

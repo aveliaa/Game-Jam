@@ -103,7 +103,7 @@ outline_color = Color( 0.52549, 1, 0.556863, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 41.4453, 11.625 )
+extents = Vector2( 66.3057, 11.625 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 240, 189 )
@@ -143,7 +143,7 @@ text = "100"
 position = Vector2( 248, -2 )
 
 [node name="right" type="CollisionShape2D" parent="shoot_right"]
-position = Vector2( -173, 160 )
+position = Vector2( -152, 161 )
 shape = SubResource( 77 )
 disabled = true
 
@@ -151,7 +151,7 @@ disabled = true
 position = Vector2( -247, 1 )
 
 [node name="left" type="CollisionShape2D" parent="shoot_left"]
-position = Vector2( 187, 157 )
+position = Vector2( 172, 158 )
 shape = SubResource( 77 )
 disabled = true
 

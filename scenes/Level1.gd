@@ -28,7 +28,7 @@ func _process(delta):
 		win.show()
 
 func _on_restart_pressed():
-	get_tree().change_scene("res://scenes/Level 1.tscn")
+	get_tree().change_scene("res://scenes/Level1.tscn")
 
 func _on_nextLevel_pressed():
 	get_tree().change_scene("res://scenes/Level2Transition.tscn")
