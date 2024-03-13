@@ -226,7 +226,7 @@ font_data = ExtResource( 3 )
 [node name="Raider" type="KinematicBody2D"]
 position = Vector2( 169, 161 )
 script = ExtResource( 1 )
-power = 2
+power = 1
 gun_speed = 0.05
 
 [node name="body" type="CollisionShape2D" parent="."]
