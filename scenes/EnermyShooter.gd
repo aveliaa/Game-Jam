@@ -23,7 +23,7 @@ func _physics_process(delta):
 	
 	if is_alive:
 		
-		if is_attacking:
+		if is_attacking and player:
 			timer += delta
 			if timer >= gun_speed:
 				player.shoot_damage(power)
@@ -104,7 +104,10 @@ func _on_patrol_left_body_entered(body):
 		in_limit(true)
 
 func _on_patrol_right_body_entered(body):
+	print(self.name)
+	print(body.name)
 	if body.name == self.name and player == null:
+		print(self.name)
 		in_limit(false)
 
 func _on_vision_range_right_body_entered(body):

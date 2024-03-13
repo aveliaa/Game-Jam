@@ -1,0 +1,313 @@
+[gd_scene load_steps=50 format=2]
+
+[ext_resource path="res://scenes/EnermyShooter.gd" type="Script" id=1]
+[ext_resource path="res://assets/sound/mobs/ak-47-firing-8760.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/font/Catboo.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/mobs_general/target.png" type="Texture" id=4]
+[ext_resource path="res://assets/level_2_mobs/enermy_2_1/Run.png" type="Texture" id=5]
+[ext_resource path="res://assets/sound/mobs/error-warning-login-denied-132113.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/level_2_mobs/enermy_2_1/Walk.png" type="Texture" id=7]
+[ext_resource path="res://assets/level_2_mobs/enermy_2_1/Dead.png" type="Texture" id=8]
+[ext_resource path="res://assets/level_2_mobs/enermy_2_1/Shot_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/level_2_mobs/enermy_2_1/Idle.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=154]
+extents = Vector2( 13.5, 32.5 )
+
+[sub_resource type="RectangleShape2D" id=155]
+extents = Vector2( 103.453, 30 )
+
+[sub_resource type="RectangleShape2D" id=156]
+extents = Vector2( 68.375, 38 )
+
+[sub_resource type="RectangleShape2D" id=157]
+extents = Vector2( 68.625, 40.5 )
+
+[sub_resource type="RectangleShape2D" id=158]
+extents = Vector2( 18, 28.75 )
+
+[sub_resource type="AtlasTexture" id=161]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=162]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=163]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=164]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=165]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=166]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=167]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=168]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=169]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=170]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=171]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 768, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=172]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 896, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=173]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=174]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=175]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=176]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=177]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=178]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=179]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=180]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=181]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=182]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=183]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=184]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 768, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=185]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 896, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=186]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=187]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=188]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=189]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=190]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=191]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=192]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 768, 0, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=159]
+animations = [ {
+"frames": [ SubResource( 161 ), SubResource( 162 ), SubResource( 163 ), SubResource( 164 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 165 ), SubResource( 166 ), SubResource( 167 ), SubResource( 168 ), SubResource( 169 ), SubResource( 170 ), SubResource( 171 ), SubResource( 172 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 173 ), SubResource( 174 ), SubResource( 175 ), SubResource( 176 ), SubResource( 177 ) ],
+"loop": false,
+"name": "pass",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 178 ), SubResource( 179 ), SubResource( 180 ), SubResource( 181 ), SubResource( 182 ), SubResource( 183 ), SubResource( 184 ), SubResource( 185 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 186 ), SubResource( 187 ), SubResource( 188 ), SubResource( 189 ), SubResource( 190 ), SubResource( 191 ), SubResource( 192 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=160]
+size = 22
+font_data = ExtResource( 3 )
+
+[node name="Raider" type="KinematicBody2D"]
+position = Vector2( 169, 161 )
+script = ExtResource( 1 )
+power = 3
+gun_speed = 0.1
+
+[node name="body" type="CollisionShape2D" parent="."]
+position = Vector2( -51, 19 )
+shape = SubResource( 154 )
+
+[node name="vision_range_right" type="Area2D" parent="."]
+position = Vector2( 296, 97 )
+
+[node name="vision_right" type="CollisionShape2D" parent="vision_range_right"]
+position = Vector2( -227, -73 )
+shape = SubResource( 155 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="vision_range_left" type="Area2D" parent="."]
+position = Vector2( -85, 97 )
+
+[node name="vision_left" type="CollisionShape2D" parent="vision_range_left"]
+position = Vector2( -91.5469, -73 )
+shape = SubResource( 155 )
+
+[node name="attack_range_right" type="Area2D" parent="."]
+position = Vector2( -89, -153 )
+
+[node name="right" type="CollisionShape2D" parent="attack_range_right"]
+position = Vector2( 128.625, 179 )
+shape = SubResource( 156 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="attack_range_left" type="Area2D" parent="."]
+position = Vector2( -279, -162 )
+
+[node name="left" type="CollisionShape2D" parent="attack_range_left"]
+position = Vector2( 138.625, 187.5 )
+shape = SubResource( 157 )
+
+[node name="danger_area" type="Area2D" parent="."]
+position = Vector2( -57, -62 )
+
+[node name="danger" type="CollisionShape2D" parent="danger_area"]
+position = Vector2( 6, 84 )
+shape = SubResource( 158 )
+
+[node name="character" type="AnimatedSprite" parent="."]
+position = Vector2( -35, -13 )
+scale = Vector2( 1.21875, 1.14844 )
+frames = SubResource( 159 )
+animation = "attack"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="sign" type="Node2D" parent="."]
+position = Vector2( -48, -50 )
+
+[node name="Sprite" type="Sprite" parent="sign"]
+position = Vector2( 1, 26 )
+scale = Vector2( 0.176136, 0.238636 )
+texture = ExtResource( 4 )
+
+[node name="notice" type="Label" parent="sign"]
+visible = false
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 11.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 160 )
+text = "!"
+
+[node name="notice" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 16, -137 )
+stream = ExtResource( 6 )
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -1, -137 )
+stream = ExtResource( 2 )
+
+[connection signal="body_entered" from="vision_range_right" to="." method="_on_vision_range_right_body_entered"]
+[connection signal="body_entered" from="vision_range_left" to="." method="_on_vision_range_left_body_entered"]
+[connection signal="body_entered" from="attack_range_right" to="." method="_on_attack_range_right_body_entered"]
+[connection signal="body_exited" from="attack_range_right" to="." method="_on_attack_range_right_body_exited"]
+[connection signal="body_entered" from="attack_range_left" to="." method="_on_attack_range_left_body_entered"]
+[connection signal="body_exited" from="attack_range_left" to="." method="_on_attack_range_left_body_exited"]
+[connection signal="body_entered" from="danger_area" to="." method="_on_danger_area_body_entered"]
