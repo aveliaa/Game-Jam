@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bang-smoke-cloud-1-184061.mp3-111a1968985de01521ece6730ca30e31.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/mobs/bang-smoke-cloud-1-184061.mp3"
+dest_files=[ "res://.import/bang-smoke-cloud-1-184061.mp3-111a1968985de01521ece6730ca30e31.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

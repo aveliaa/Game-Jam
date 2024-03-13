@@ -824,6 +824,7 @@ position = Vector2( 3578, 127 )
 texture = ExtResource( 26 )
 
 [node name="Sprite4" type="Sprite" parent="Background/graffiti"]
+visible = false
 position = Vector2( 1952, 145 )
 texture = ExtResource( 37 )
 

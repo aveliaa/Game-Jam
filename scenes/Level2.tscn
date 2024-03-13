@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/font/joystix monospace.otf" type="DynamicFontData" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://assets/sound/mobs/error-warning-login-denied-132113.mp3" type="AudioStream" id=26]
 [ext_resource path="res://objects/Raider2.tscn" type="PackedScene" id=27]
 [ext_resource path="res://objects/Raider1.tscn" type="PackedScene" id=28]
+[ext_resource path="res://objects/bomb.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/font/Catboo.otf" type="DynamicFontData" id=31]
 [ext_resource path="res://assets/mobs_general/target.png" type="Texture" id=32]
 [ext_resource path="res://scenes/EnermyMelee.gd" type="Script" id=41]
@@ -397,6 +398,7 @@ position = Vector2( 754, 168 )
 texture = ExtResource( 10 )
 
 [node name="Sprite2" type="Sprite" parent="Background/sign"]
+visible = false
 position = Vector2( -351, 36 )
 texture = ExtResource( 15 )
 __meta__ = {
@@ -732,6 +734,12 @@ stream = ExtResource( 26 )
 [node name="punch" type="AudioStreamPlayer2D" parent="MainTarget/Boss"]
 position = Vector2( -5, -40 )
 stream = ExtResource( 48 )
+
+[node name="bomb" parent="." instance=ExtResource( 29 )]
+position = Vector2( 2529, 639 )
+
+[node name="bomb2" parent="." instance=ExtResource( 29 )]
+position = Vector2( 2937, 96 )
 
 [connection signal="body_entered" from="Enermy1/patrol_left" to="Enermy1/Raider" method="_on_patrol_left_body_entered"]
 [connection signal="body_entered" from="Enermy1/patrol_right" to="Enermy1/Raider" method="_on_patrol_right_body_entered"]

@@ -104,10 +104,7 @@ func _on_patrol_left_body_entered(body):
 		in_limit(true)
 
 func _on_patrol_right_body_entered(body):
-	print(self.name)
-	print(body.name)
 	if body.name == self.name and player == null:
-		print(self.name)
 		in_limit(false)
 
 func _on_vision_range_right_body_entered(body):

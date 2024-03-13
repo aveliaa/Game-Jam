@@ -15,6 +15,15 @@ func _ready():
 #func _process(delta):
 #	pass
 
+onready var animator = $animator
+onready var sfx = $sfx
 
-func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/Level2.tscn")
+var active = true
+
+func _on_bombArea_body_entered(body):
+	if(body.name == "Player") and active:
+		
+		active = false
+		animator.play("default")
+		sfx.play()
+		body.shoot_damage(50)

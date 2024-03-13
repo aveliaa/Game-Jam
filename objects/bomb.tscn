@@ -1,0 +1,79 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/bomb.gd" type="Script" id=1]
+[ext_resource path="res://assets/industrial objects/Pointer1.png" type="Texture" id=2]
+[ext_resource path="res://assets/mobs_general/Explosion.png" type="Texture" id=3]
+[ext_resource path="res://assets/sound/mobs/bang-smoke-cloud-1-184061.mp3" type="AudioStream" id=4]
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 768, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 896, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1024, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=42]
+animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 35 ) ],
+"loop": false,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=43]
+
+[node name="bomb" type="Node2D"]
+position = Vector2( 305, 541 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2, 19 )
+scale = Vector2( 1.23437, 1 )
+texture = ExtResource( 2 )
+
+[node name="animator" type="AnimatedSprite" parent="."]
+position = Vector2( 4, -26 )
+frames = SubResource( 42 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bombArea" type="Area2D" parent="."]
+position = Vector2( 0, 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bombArea"]
+position = Vector2( 1, -1 )
+shape = SubResource( 43 )
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="body_entered" from="bombArea" to="." method="_on_bombArea_body_entered"]
