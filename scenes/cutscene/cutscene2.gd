@@ -23,7 +23,7 @@ func _ready():
 	story.text = text[0]
 	display.play("one")
 
-var next_scene = "res://scenes/Nursery1.tscn"
+var next_scene = "res://scenes/Nursery3.tscn"
 onready var transition = $transition
 
 func _on_next_pressed():

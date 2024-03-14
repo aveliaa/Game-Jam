@@ -31,4 +31,8 @@ func _on_restart_pressed():
 	get_tree().change_scene("res://scenes/Level1.tscn")
 
 func _on_nextLevel_pressed():
-	get_tree().change_scene("res://scenes/Level2Transition.tscn")
+	get_tree().change_scene("res://scenes/cutscene/cutscene1.tscn")
+
+
+func _on_MainRestart_pressed():
+	get_tree().change_scene("res://scenes/Level1.tscn")

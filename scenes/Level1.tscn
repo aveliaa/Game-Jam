@@ -1330,6 +1330,13 @@ margin_right = 68.0
 margin_bottom = 215.0
 text = "CONTINUE"
 
+[node name="MainRestart" type="Button" parent="Player/Player"]
+margin_left = 302.0
+margin_top = -40.0
+margin_right = 385.0
+margin_bottom = -13.0
+text = "RESTART"
+
 [connection signal="body_entered" from="Enermy1/patrol_left" to="Enermy1/EnermyBeginner" method="_on_patrol_left_body_entered"]
 [connection signal="body_entered" from="Enermy1/patrol_right" to="Enermy1/EnermyBeginner" method="_on_patrol_right_body_entered"]
 [connection signal="body_entered" from="Enermy1/EnermyBeginner/vision_range_right" to="Enermy1/EnermyBeginner" method="_on_vision_range_right_body_entered"]
@@ -1359,3 +1366,4 @@ text = "CONTINUE"
 [connection signal="body_entered" from="MainTarget/EnermyBeginner/danger_area" to="MainTarget/EnermyBeginner" method="_on_danger_area_body_entered"]
 [connection signal="pressed" from="Player/Player/popupLost/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Player/Player/popupWin/nextLevel" to="." method="_on_nextLevel_pressed"]
+[connection signal="pressed" from="Player/Player/MainRestart" to="." method="_on_MainRestart_pressed"]

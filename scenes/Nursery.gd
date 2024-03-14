@@ -14,13 +14,13 @@ func _ready():
 	
 
 var time = 0
-var energy = 5
+var energy = 3
 
 onready var time_label = $Labels/time
 onready var energy_label = $Labels/energy
 
 onready var popup_win = $Done
-onready var penalty = $Done/penalty
+onready var popup_lose = $Over
 
 onready var restart_button = restart_button
 onready var continue_button = continue_button
@@ -29,12 +29,18 @@ onready var cutscene = $cutscene
 export (String) var level_path
 export (String) var nursery_path
 
+
 func level_finished():
 	popup_win.show()
-	penalty.text = str(energy * 10)
+
+func level_over():
+	popup_lose.show()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if energy == 0:
+		level_over()
 	
 	if num_of_request == 6:
 		level_finished()
@@ -52,9 +58,6 @@ func _process(delta):
 				energy -= 1
 			
 				energy_label.text = str(energy)
-			
-				# TODO: When energy == 0 / task udah 5 kali selesai, go to next scene
-				# jangan lupa transfer energi, 5 x 20
 			
 			elif time == 3:
 				summer_cry()
@@ -183,3 +186,5 @@ func _on_continue_pressed():
 func _on_restart_pressed():
 	get_tree().change_scene(nursery_path)
 	
+func _on_nextlevel_pressed():
+	get_tree().change_scene(level_path)

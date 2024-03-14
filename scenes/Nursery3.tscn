@@ -210,8 +210,8 @@ font_data = ExtResource( 3 )
 
 [node name="Nursery" type="Node2D"]
 script = ExtResource( 1 )
-level_path = "res://scenes/Level1.tscn"
-nursery_path = "res://scenes/Nursery1.tscn"
+level_path = "res://scenes/Level3.tscn"
+nursery_path = "res://scenes/Nursery3.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 20 )
@@ -575,9 +575,10 @@ margin_left = 97.0
 margin_top = 447.0
 margin_right = 894.0
 margin_bottom = 522.0
-text = "Now that Summer finally slept, it's time to start working. Today's mission is relatively easy. 
-It is a Hit on a small group who is smuggling things for.. \"The Resistance\". 
-The target is the only woman in the group."
+text = "Food, check. Diaper, check, Hygene, check. Sleep, check. Now that Summer is fine, time to go to work.
+This is it. Time to infiltrate one of their main base. 
+Definitely expect more bodyguards, firearms, and bombs.
+One instruction: keep going underground."
 
 [node name="pointer" type="Sprite" parent="cutscene/dialogue"]
 visible = false
