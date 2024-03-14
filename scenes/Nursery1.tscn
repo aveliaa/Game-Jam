@@ -418,26 +418,27 @@ text = "3"
 position = Vector2( 118, 268 )
 scale = Vector2( 0.546729, 0.597826 )
 frames = SubResource( 30 )
-frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Pointer"]
 position = Vector2( 357, 350 )
 scale = Vector2( 0.546729, 0.597826 )
 frames = SubResource( 30 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Pointer"]
 position = Vector2( 854, 362 )
 scale = Vector2( 0.546729, 0.597826 )
 frames = SubResource( 30 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Pointer"]
 position = Vector2( 1076, 313 )
 scale = Vector2( 0.546729, 0.597826 )
 frames = SubResource( 30 )
+frame = 1
 playing = true
 
 [node name="bgm" type="AudioStreamPlayer2D" parent="."]

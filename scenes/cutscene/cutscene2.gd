@@ -20,6 +20,10 @@ onready var display = $display
 onready var next_button = $next
 
 func _ready():
+	
+	yield(get_tree().create_timer(5),"timeout")
+	$opening.hide()
+	
 	story.text = text[0]
 	display.play("one")
 
