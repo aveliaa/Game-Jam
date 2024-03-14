@@ -4,6 +4,7 @@ extends Node2D
 # summer kasi 3 request (randomized)
 
 var current_request = 0
+var num_of_request = 0
 
 onready var summer_anim = $summer/SummerAnim
 
@@ -14,30 +15,49 @@ func _ready():
 
 var time = 0
 var energy = 5
+
 onready var time_label = $Labels/time
 onready var energy_label = $Labels/energy
 
+onready var popup_win = $Done
+onready var penalty = $Done/penalty
+
+onready var restart_button = restart_button
+onready var continue_button = continue_button
+onready var cutscene = $cutscene
+
+export (String) var level_path
+export (String) var nursery_path
+
+func level_finished():
+	popup_win.show()
+	penalty.text = str(energy * 10)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	get_input()
+	if num_of_request == 6:
+		level_finished()
+				
+	else:
+		get_input()
 	
-	time = int(timer.time_left)
-	time_label.text = str(time)
+		time = int(timer.time_left)
+		time_label.text = str(time)
 	
 	# If task is still running
-	if(current_request != null):
-		if(time == 0):
-			current_request = generate_request()
-			energy -= 1
+		if(current_request != null):
+			if(time == 0):
+				current_request = generate_request()
+				energy -= 1
 			
-			energy_label.text = str(energy)
+				energy_label.text = str(energy)
 			
-			# TODO: When energy == 0 / task udah 5 kali selesai, go to next scene
-			# jangan lupa transfer energi, 5 x 20
+				# TODO: When energy == 0 / task udah 5 kali selesai, go to next scene
+				# jangan lupa transfer energi, 5 x 20
 			
-		elif time == 3:
-			summer_cry()
+			elif time == 3:
+				summer_cry()
 	
 
 var current_task = 0
@@ -79,6 +99,8 @@ var randomizer = RandomNumberGenerator.new()
 onready var summer_request = $summer/want/objective
 
 func generate_request():
+	num_of_request += 1
+	
 	timer.start(6)
 	summer_default()
 	current_obj = null
@@ -154,3 +176,10 @@ func _on_bookArea_body_entered(body):
 func _on_bassinetArea_body_entered(body):
 	set_area(5,body)
 
+
+func _on_continue_pressed():
+	cutscene.show()
+
+func _on_restart_pressed():
+	get_tree().change_scene(nursery_path)
+	

@@ -46,6 +46,7 @@ func chase():
 		velocity.x -= speed	+ 2
 	
 var go_right = true
+
 func move():	
 	if go_right:
 		velocity.x += speed

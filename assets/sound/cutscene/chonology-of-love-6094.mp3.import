@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/chonology-of-love-6094.mp3-c319de86a9dd984b6f43b607c629e4f0.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/cutscene/chonology-of-love-6094.mp3"
+dest_files=[ "res://.import/chonology-of-love-6094.mp3-c319de86a9dd984b6f43b607c629e4f0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

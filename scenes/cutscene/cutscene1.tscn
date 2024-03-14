@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/cutscene/1_1_.png" type="Texture" id=1]
+[ext_resource path="res://scenes/cutscene/cutscene1.gd" type="Script" id=2]
+[ext_resource path="res://assets/cutscene/1_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/font/Altone.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/sound/cutscene/the-last-piano-112677.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/font/Pixeltype.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 1051, 796 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 1051, 796 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": false,
+"name": "one",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "two",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 17
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 6 )
+
+[node name="cutscene1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="bg" type="ColorRect" parent="."]
+margin_left = -375.0
+margin_top = -122.0
+margin_right = 1485.0
+margin_bottom = 765.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 508, 294 )
+current = true
+
+[node name="display" type="AnimatedSprite" parent="."]
+position = Vector2( 507, 248 )
+scale = Vector2( 0.563987, 0.525754 )
+frames = SubResource( 2 )
+animation = "two"
+
+[node name="story" type="Label" parent="."]
+margin_left = 215.0
+margin_top = 474.0
+margin_right = 808.0
+margin_bottom = 537.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua nisi."
+autowrap = true
+
+[node name="next" type="Button" parent="."]
+margin_left = 475.0
+margin_top = 548.0
+margin_right = 542.0
+margin_bottom = 579.0
+text = "Next"
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="transition" type="Node2D" parent="."]
+visible = false
+
+[node name="bg" type="ColorRect" parent="transition"]
+margin_left = 136.0
+margin_top = -74.0
+margin_right = 886.0
+margin_bottom = 637.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="transition"]
+margin_left = 410.0
+margin_top = 239.0
+margin_right = 614.0
+margin_bottom = 302.0
+custom_fonts/font = SubResource( 5 )
+text = "DAY 14"
+align = 1
+
+[node name="Label2" type="Label" parent="transition"]
+margin_left = 408.0
+margin_top = 308.0
+margin_right = 612.0
+margin_bottom = 371.0
+custom_colors/font_color = Color( 1, 0.282353, 0.72549, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "With Summer"
+align = 1
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]

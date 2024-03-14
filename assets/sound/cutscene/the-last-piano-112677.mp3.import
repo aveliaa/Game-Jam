@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/the-last-piano-112677.mp3-cc27b6292923da9a426d4168e43010d8.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/cutscene/the-last-piano-112677.mp3"
+dest_files=[ "res://.import/the-last-piano-112677.mp3-cc27b6292923da9a426d4168e43010d8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
