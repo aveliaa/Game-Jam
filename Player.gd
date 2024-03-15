@@ -13,7 +13,12 @@ onready var animate = $AnimatedSprite
 
 var is_attacking = false
 var is_right = true
+onready var hp = $status/Hp
 
+func _ready():
+	hp.text = str(HpSingleton.hp)
+	pass
+	
 func get_input():
 	velocity.x = 0
 	
@@ -72,8 +77,8 @@ func shooting(is_shooting):
 	shoot_right.disabled =  disable_right
 	shoot_left.disabled = disable_left
 
-onready var hp = $status/Hp
-var remaining_hp = 100
+
+var remaining_hp = HpSingleton.hp
 func punch_damage(to_right,damage):
 	if to_right:
 		velocity.x += 3000

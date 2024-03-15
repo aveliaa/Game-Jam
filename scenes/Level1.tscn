@@ -1332,10 +1332,17 @@ text = "CONTINUE"
 
 [node name="MainRestart" type="Button" parent="Player/Player"]
 margin_left = 302.0
-margin_top = -40.0
+margin_top = -87.0
 margin_right = 385.0
-margin_bottom = -13.0
+margin_bottom = -60.0
 text = "RESTART"
+
+[node name="ResetDay" type="Button" parent="Player/Player"]
+margin_left = 303.0
+margin_top = -51.0
+margin_right = 386.0
+margin_bottom = -19.0
+text = "RESET DAY"
 
 [connection signal="body_entered" from="Enermy1/patrol_left" to="Enermy1/EnermyBeginner" method="_on_patrol_left_body_entered"]
 [connection signal="body_entered" from="Enermy1/patrol_right" to="Enermy1/EnermyBeginner" method="_on_patrol_right_body_entered"]
@@ -1367,3 +1374,4 @@ text = "RESTART"
 [connection signal="pressed" from="Player/Player/popupLost/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Player/Player/popupWin/nextLevel" to="." method="_on_nextLevel_pressed"]
 [connection signal="pressed" from="Player/Player/MainRestart" to="." method="_on_MainRestart_pressed"]
+[connection signal="pressed" from="Player/Player/ResetDay" to="." method="_on_ResetDay_pressed"]

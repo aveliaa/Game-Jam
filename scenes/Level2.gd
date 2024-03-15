@@ -32,3 +32,7 @@ func _on_restart_pressed():
 
 func _on_nextLevel_pressed():
 	get_tree().change_scene("res://scenes/cutscene/cutscene2.tscn")
+
+
+func _on_ResetDay_pressed():
+	get_tree().change_scene("res://scenes/Nursery2.tscn")

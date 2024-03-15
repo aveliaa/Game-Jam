@@ -33,3 +33,7 @@ func _on_nextLevel_pressed():
 
 func _on_restart_pressed():
 	get_tree().change_scene("res://scenes/Level3.tscn")
+
+
+func _on_ResetDay_pressed():
+	get_tree().change_scene("res://scenes/Nursery3.tscn")

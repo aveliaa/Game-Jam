@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://scenes/Nursery.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/joystix monospace.otf" type="DynamicFontData" id=2]
@@ -188,16 +188,32 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=33]
+[sub_resource type="DynamicFont" id=39]
 size = 47
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=32]
+[sub_resource type="DynamicFont" id=40]
+size = 26
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=41]
+size = 26
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=42]
+size = 26
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=43]
 size = 26
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=38]
 size = 47
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 26
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=36]
@@ -457,26 +473,6 @@ margin_right = 1605.0
 margin_bottom = 703.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Label2" type="Label" parent="Done"]
-margin_left = 323.0
-margin_top = 271.0
-margin_right = 1053.0
-margin_bottom = 400.0
-custom_colors/font_color = Color( 0.407843, 1, 0.470588, 1 )
-custom_fonts/font = SubResource( 33 )
-text = "MISSION COMPLETED"
-align = 1
-
-[node name="Label3" type="Label" parent="Done"]
-margin_left = 328.0
-margin_top = 342.0
-margin_right = 1043.0
-margin_bottom = 427.0
-custom_colors/font_color = Color( 0.458824, 1, 0.427451, 1 )
-custom_fonts/font = SubResource( 32 )
-text = "Summer has fallen asleep"
-align = 1
-
 [node name="continue" type="Button" parent="Done"]
 margin_left = 727.0
 margin_top = 448.0
@@ -490,6 +486,56 @@ margin_top = 451.0
 margin_right = 668.0
 margin_bottom = 502.0
 text = "RESTART"
+
+[node name="Label2" type="Label" parent="Done"]
+margin_left = 323.0
+margin_top = 177.0
+margin_right = 1053.0
+margin_bottom = 306.0
+custom_colors/font_color = Color( 0.407843, 1, 0.470588, 1 )
+custom_fonts/font = SubResource( 39 )
+text = "MISSION COMPLETED"
+align = 1
+
+[node name="Label3" type="Label" parent="Done"]
+margin_left = 328.0
+margin_top = 249.0
+margin_right = 1043.0
+margin_bottom = 334.0
+custom_colors/font_color = Color( 0.458824, 1, 0.427451, 1 )
+custom_fonts/font = SubResource( 40 )
+text = "Summer has fallen asleep"
+align = 1
+
+[node name="Label4" type="Label" parent="Done"]
+margin_left = 234.0
+margin_top = 334.0
+margin_right = 949.0
+margin_bottom = 419.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 41 )
+text = "remaining hp:"
+align = 1
+
+[node name="Label5" type="Label" parent="Done"]
+margin_left = 652.0
+margin_top = 333.0
+margin_right = 979.0
+margin_bottom = 418.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 42 )
+text = "100 - "
+align = 1
+
+[node name="penalty" type="Label" parent="Done"]
+margin_left = 841.0
+margin_top = 332.0
+margin_right = 945.0
+margin_bottom = 417.0
+custom_colors/font_color = Color( 1, 0.427451, 0.427451, 1 )
+custom_fonts/font = SubResource( 43 )
+text = "999"
+align = 1
 
 [node name="Over" type="Node2D" parent="."]
 visible = false

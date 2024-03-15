@@ -10,11 +10,13 @@ onready var summer_anim = $summer/SummerAnim
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	energy_label.text = str(energy)
 	current_request = generate_request()
 	
 
 var time = 0
-var energy = 3
+var energy = 5
+var penalty = 0
 
 onready var time_label = $Labels/time
 onready var energy_label = $Labels/energy
@@ -31,8 +33,17 @@ export (String) var nursery_path
 
 
 func level_finished():
+	
+	var result = penalty * 10
+	penalty_result.text = str(result)
+	
+	HpSingleton.set_hp(100 - result)
+	
 	popup_win.show()
+	
+	
 
+onready var penalty_result = $Done/penalty
 func level_over():
 	popup_lose.show()
 	
@@ -56,8 +67,10 @@ func _process(delta):
 			if(time == 0):
 				current_request = generate_request()
 				energy -= 1
+				penalty += 1
 			
 				energy_label.text = str(energy)
+				
 			
 			elif time == 3:
 				summer_cry()
