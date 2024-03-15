@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/cutscene/2_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/cutscene/cutscene2.gd" type="Script" id=2]
@@ -7,27 +7,22 @@
 [ext_resource path="res://assets/sound/cutscene/chonology-of-love-6094.mp3" type="AudioStream" id=5]
 [ext_resource path="res://assets/font/Pixeltype.ttf" type="DynamicFontData" id=6]
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 1051, 796 )
+[sub_resource type="DynamicFont" id=4]
+size = 17
+font_data = ExtResource( 4 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 7 ) ],
-"loop": false,
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
 "name": "one",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "two",
 "speed": 5.0
 } ]
-
-[sub_resource type="DynamicFont" id=4]
-size = 17
-font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 100
@@ -59,12 +54,6 @@ color = Color( 0, 0, 0, 1 )
 position = Vector2( 508, 294 )
 current = true
 
-[node name="display" type="AnimatedSprite" parent="."]
-position = Vector2( 507, 248 )
-scale = Vector2( 0.563987, 0.525754 )
-frames = SubResource( 2 )
-animation = "two"
-
 [node name="story" type="Label" parent="."]
 margin_left = 215.0
 margin_top = 474.0
@@ -72,7 +61,7 @@ margin_right = 808.0
 margin_bottom = 537.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 4 )
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua nisi."
+text = "When it happened, i had just gotten home from a mission. i had a bad feeling so i went to your house."
 autowrap = true
 
 [node name="next" type="Button" parent="."]
@@ -85,6 +74,12 @@ text = "Next"
 [node name="bgm" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
+[node name="display" type="AnimatedSprite" parent="."]
+position = Vector2( 509, 239 )
+scale = Vector2( 0.551508, 0.551508 )
+frames = SubResource( 10 )
+animation = "one"
 
 [node name="transition" type="Node2D" parent="."]
 visible = false

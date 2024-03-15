@@ -417,12 +417,12 @@ margin_right = 628.0
 margin_bottom = 114.0
 custom_colors/font_color = Color( 0.760784, 0.25098, 0.25098, 1 )
 custom_fonts/font = SubResource( 31 )
-text = "Lives :"
+text = "Energy :"
 
 [node name="energy" type="Label" parent="Labels"]
-margin_left = 616.0
+margin_left = 635.0
 margin_top = 90.0
-margin_right = 630.0
+margin_right = 650.0
 margin_bottom = 115.0
 custom_colors/font_color = Color( 0.760784, 0.25098, 0.25098, 1 )
 custom_fonts/font = SubResource( 31 )

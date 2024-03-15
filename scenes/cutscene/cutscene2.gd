@@ -48,3 +48,5 @@ func _on_next_pressed():
 		
 		if text.size() == counter:
 			next_button.text = "Continue"
+		
+	
